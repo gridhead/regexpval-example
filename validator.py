@@ -22,6 +22,7 @@ def vld_fname(strpiece):
     else:
         return 0
 
+
 def vld_lname(strpiece):
     regex = "^[A-Z]{3,20}$"
     strpiece = strpiece.upper()
@@ -37,72 +38,39 @@ def vld_sepin(strpiece):
     else:
         return 0
 
-'''
 def vld_paswd(strpiece):
-    regex_ezy = "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
-    regex_med = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
-    regex_hrd = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
-    # Minimum eight characters, at least one letter and one number
-    # Minimum eight characters, at least one uppercase letter, one lowercase letter and one number
+    reg_wk0 = r"^(?=.*[a-z])(?=.*\d)[a-z\d]{8,}$"
+    # minimum eight characters, at least one lowercase letter and one number
+    reg_wk1 = r"^(?=.*[A-Z])(?=.*\d)[A-Z\d]{8,}$"
+    # Minimum eight characters, at least one uppercase letter and one number
+    reg_wk2 = r"^[A-Z]{8,}$"
+    # Only uppercase alphabets
+    reg_wk3 = r"^[a-z]{8,}$"
+    # Only lowercase alphabets
+    reg_wk4 = r"^[0-9]{8,}$"
+    # Only numbers
+    reg_md0 = r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+    # Minimum eight characters, at least one uppercase letter, one lowercase letter and one number:
+    reg_md1 = r"^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[a-z\d@$!%*?&]{8,}$"
+    # Minimum eight characters, at least one number and lowercase letter and one special character
+    reg_md2 = r"^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Z\d@$!%*?&]{8,}$"
+    # Minimum eight characters, at least one number and uppercase letter and one special character
+    reg_str = r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
     # Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
-    if re.match(regex_ezy, strpiece):
-        if re.findall(regex_med, strpiece):
-            if re.findall(regex_hrd, strpiece):
-                return 3
-            else:
-                return 2
-        else:
-            return 1
-    else:
-        return 0
-'''
-
-def vld_paswd(strpiece):
-    '''
-    regex_ezy = "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
-    regex_med = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
-    regex_hrd = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
-    # Minimum eight characters, at least one letter and one number
-    # Minimum eight characters, at least one uppercase letter, one lowercase letter and one number
-    # Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
-    pats=re.compile(regex_hrd)
-    patw=re.compile(regex_ezy)
-    patm=re.compile(regex_med)
-    mats=re.search(pats, strpiece)
-    matw=re.search(patw, strpiece)
-    matm=re.search(patm, strpiece)
-    if mats:
+    mats0 = re.search(reg_str, strpiece)
+    matw0 = re.search(reg_wk0, strpiece)
+    matw1 = re.search(reg_wk1, strpiece)
+    matw2 = re.search(reg_wk2, strpiece)
+    matw3 = re.search(reg_wk3, strpiece)
+    matw4 = re.search(reg_wk4, strpiece)
+    matm0 = re.search(reg_md0, strpiece)
+    matm1 = re.search(reg_md1, strpiece)
+    matm2 = re.search(reg_md2, strpiece)
+    if mats0:
         return 3
-    elif matm:
+    elif matm0 or matm1 or matm2:
         return 2
-    elif matw:
+    elif matw0 or matw1 or matw2 or matw3 or matw4:
         return 1
     else:
         return 0
-    ''' 
-    regweak= r"^(?=.*[a-z])(?=.*\d)[a-z\d]{8,}$" #minimum eight characters, at least one lowercase letter and one number
-    regweak1= r"^(?=.*[A-Z])(?=.*\d)[A-Z\d]{8,}$" #Minimum eight characters, at least one uppercase letter and one number
-    regmedium= r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"#Minimum eight characters, at least one uppercase letter, one lowercase letter and one number:
-    regmedium1= r"^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[a-z\d@$!%*?&]{8,}$" #Minimum eight characters, at least one number and lowercase letter and one special character
-    regmedium2= r"^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Z\d@$!%*?&]{8,}$" #Minimum eight characters, at least one number and uppercase letter and one special character
-    regstrong = r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" #Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
-                           
-    mats = re.search(regstrong, strpiece) 
-    matw = re.search(regweak, strpiece)
-    matw1 = re.search(regweak1, strpiece)
-    matm= re.search(regmedium, strpiece)
-    matm1= re.search(regmedium1, strpiece)
-    matm2= re.search(regmedium2, strpiece)
-       
-    if mats: 
-        return 3
-    elif matm or matm1 or matm2: 
-        return 2
-    elif matw or matw1:
-        return 1
-    else:
-        return 0       
-      
-
-    
-    
