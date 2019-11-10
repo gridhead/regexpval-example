@@ -21,21 +21,18 @@ A simple regular expression validator which looks, feels and works good
 - [X] Correct the tab order for fields
 
 ## Screenshots
-* Window (all versions)
-![Window](regexpval-main.png)
-* Message for failed validation due to empty string (all versions)
-![Message for failed validation due to empty string](regexpval-emty.png)
-* Message for failed validation due to illegal characters (till v0.04)
-![Message for failed validation due to illegal characters](regexpval-fail.png)
-* Message for failed validation due to illegal characters (v0.05 onwards)
-![Message for failed validation due to illegal characters](regexpval-fail2.png)
-* Message for successful validation (till v0.04)
-![Message for successful validation](regexpval-succ.png)
-* Message for successful validation with password strength WEAK (v0.05 onwards)
-![Message for successful validation with password strength WEAK](regexpval-weak.png)
-* Message for successful validation with password strength MEDIUM (v0.05 onwards)
-![Message for successful validation with password strength MEDIUM](regexpval-mdum.png)
-
+* Window
+![Window](regexp_main.png)
+* Message for failed validation due to empty string
+![Message for failed validation due to empty string](regexp_emty.png)
+* Message for failed validation due to illegal characters (till
+![Message for failed validation due to illegal characters](regexp_fail.png)
+* Message for successful validation with password strength WEAK
+![Message for successful validation with password strength WEAK](regexp_weak.png)
+* Message for successful validation with password strength MEDIUM
+![Message for successful validation with password strength MEDIUM](regexp_mdum.png)
+* Message for successful validation with password strength STRONG
+![Message for successful validation with password strength STRONG](regexp_strg.png)
 
 ## Changelog
 ### v0.01
