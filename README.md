@@ -22,17 +22,28 @@ A simple regular expression validator which looks, feels and works good
 
 ## Screenshots
 * Window
+
 ![Window](regexp_main.png)
+
 * Message for failed validation due to empty string
+
 ![Message for failed validation due to empty string](regexp_emty.png)
-* Message for failed validation due to illegal characters (till
+
+* Message for failed validation due to illegal characters
+
 ![Message for failed validation due to illegal characters](regexp_fail.png)
+
 * Message for successful validation with password strength WEAK
+
 ![Message for successful validation with password strength WEAK](regexp_weak.png)
+
 * Message for successful validation with password strength MEDIUM
+
 ![Message for successful validation with password strength MEDIUM](regexp_mdum.png)
+
 * Message for successful validation with password strength STRONG
-![Message for successful validation with password strength STRONG](regexp_strg.png)
+
+![Message for successful validation with password strength STRONG](regexp_hard.png)
 
 ## Changelog
 ### v0.01
