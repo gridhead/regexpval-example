@@ -1,5 +1,5 @@
 # regexpval-example
-Version 0.05
+Version 0.06
 
 A simple regular expression validator which looks, feels and works good
 
@@ -14,7 +14,7 @@ A simple regular expression validator which looks, feels and works good
 - [X] Validator function for last name (Length specified)
 - [X] Validator function for phone number (Length specified)
 - [X] Validator function for email address (Length NOT specified)
-- [ ] Strength evaluator for password (Length NOT specified)
+- [X] Strength evaluator for password (Length NOT specified)
 - [X] Validator function for security PIN (Length specified)
 - [X] Add masking in the password field
 - [X] Add masking in the security PIN field
@@ -58,18 +58,21 @@ A simple regular expression validator which looks, feels and works good
 2. Added length constraints for phone number and security PIN
 3. Fixed tab shifting order of fields in GUI
 
-### v0.05 (Current)
+### v0.05
 1. Added password strength evaluator function for WEAK and MEDIUM strengths
 2. Added password strength message in successful input
 3. Added clear buttons for all the fields
 
-### v0.06 (Oncoming)
+### v0.06 (Current)
 1. Fixed password strength evaluator function for HARD strength
 2. Performed codebase cleanup for unnecessary dependencies
 3. Optimise codebase for quick launch and speed
 
+### v0.07 (Oncoming)
+_To be decided_
+
 ## Bugs
-1. Password strength HARD __cannot__ be achieved as of 4th Nov 2019 (v0.05)
+1. **[FIXED ON 10th Nov 2019, 23:02]** Password strength HARD __cannot__ be achieved as of 4th Nov 2019 (v0.05)
 
 ## Contribute
 Clone, add, build and make a PR. You know the drill.
