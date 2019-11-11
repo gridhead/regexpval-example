@@ -49,6 +49,8 @@ def vld_paswd(strpiece):
     # Only lowercase alphabets
     reg_wk4 = r"^[0-9]{8,}$"
     # Only numbers
+    reg_wk5 = r"^[@$!%*?&]{8,}$"
+    # Only Symbols
     reg_md0 = r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
     # Minimum eight characters, at least one uppercase letter, one lowercase letter and one number:
     reg_md1 = r"^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[a-z\d@$!%*?&]{8,}$"
@@ -63,6 +65,7 @@ def vld_paswd(strpiece):
     matw2 = re.search(reg_wk2, strpiece)
     matw3 = re.search(reg_wk3, strpiece)
     matw4 = re.search(reg_wk4, strpiece)
+    matw5 = re.search(reg_wk5, strpiece)
     matm0 = re.search(reg_md0, strpiece)
     matm1 = re.search(reg_md1, strpiece)
     matm2 = re.search(reg_md2, strpiece)
@@ -70,7 +73,7 @@ def vld_paswd(strpiece):
         return 3
     elif matm0 or matm1 or matm2:
         return 2
-    elif matw0 or matw1 or matw2 or matw3 or matw4:
+    elif matw0 or matw1 or matw2 or matw3 or matw4 or matw5:
         return 1
     else:
         return 0
