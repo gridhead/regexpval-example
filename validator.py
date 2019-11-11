@@ -49,6 +49,8 @@ def vld_paswd(strpiece):
     # Only lowercase alphabets
     reg_wk4 = r"^[0-9]{8,}$"
     # Only numbers
+    reg_wk4 = r"^[@$!%*?&]{8,}$"
+    # Only Symbols
     reg_md0 = r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
     # Minimum eight characters, at least one uppercase letter, one lowercase letter and one number:
     reg_md1 = r"^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[a-z\d@$!%*?&]{8,}$"
